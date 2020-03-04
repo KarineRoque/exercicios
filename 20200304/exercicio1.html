@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script type ="text/javascript" src="exercicio1.js"></script>
+
+    </head>
+    <body>
+        <center>
+            <form name="ex1" method="POST">
+                Nome: <input type="text" name="nome"/>
+                <p>
+                    E-mail: <input type="text" name= "email"/> 
+                </p>
+                Sexo:  <input type="text" name="sexo" />
+                <p>
+                    Data de nasc.: <input type="date" name = "datt_nasc"/>  
+                </p>
+
+                <input type="button" value="exibir" onclick="escrever_mensagem(document.ex1.value)"/>
+            </form>
+        </center>
+    </body>
+</html>
