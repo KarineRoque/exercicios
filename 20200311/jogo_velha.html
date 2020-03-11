@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> Jogo da velha</title>
+    <script>
+        var cont = 0;
+        function verificar(valor){
+            cont++;
+            if(cont%2 == 0){
+                if(valor.value != 0){
+                    valor.value = 0;
+                    alert("Não é a sua vez!");
+                }else{
+                    vencedor();
+                }
+            }else{
+                if(valor.value != 'x'){
+                    valor.value = 'x';
+                    alert("Não é a sua vez!");
+                }else{
+                    vencedor();
+                }
+            }
+        }
+
+        function vencedor(){
+            v1 = document.getElementById('v1').value;
+            v2 = document.getElementById('v2').value;
+            v3 = document.getElementById('v3').value;
+            v4 = document.getElementById('v4').value;
+            v5 = document.getElementById('v5').value;
+            v6 = document.getElementById('v6').value;
+            v7 = document.getElementById('v7').value;
+            v8 = document.getElementById('v8').value;
+            v9 = document.getElementById('v9').value;
+            
+            if (((v1 != "") && (v2 != "") && (v3 != "") && (v1 == v2) && (v2 == v3)) ||
+                ((v1 != "") && (v5 != "") && (v9 != "") && (v1 == v5) && (v5 == v9)) ||
+                ((v1 != "") && (v4 != "") && (v7 != "") && (v1 == v4) && (v4 == v7)) ||
+                ((v4 != "") && (v5 != "") && (v6 != "") && (v4 == v5) && (v5 == v6)) ||
+                ((v7 != "") && (v8 != "") && (v9 != "") && (v7 == v8) && (v8 == v9)) ||
+                ((v2 != "") && (v5 != "") && (v8 != "") && (v2 == v5) && (v5 == v8)) ||
+                ((v3 != "") && (v6 != "") && (v9 != "") && (v3 == v6) && (v6 == v9)) ||
+                ((v7 != "") && (v5 != "") && (v3 != "") && (v7 == v5) && (v5 == v3))){
+                    alert("Você ganhou!!! Parabéns");
+                } else if(cont == 9){
+                    alert("Deu velha");
+                }
+    
+        }
+
+    
+    </script>
+</head>
+<body>
+    <h1> Jogo Da Velha </h1>
+
+    <form name = "f">
+        <table border="2">
+            <tr>
+                <th> <input type="text" id = "v1" onblur="verificar(this)"/> </th> 
+                <th> <input type="text" id = "v2" onblur="verificar(this)"/> </th> 
+                <th> <input type="text" id = "v3" onblur="verificar(this)"/> </th> 
+            </tr>
+            <tr>
+                    <th> <input type="text" id = "v4" onblur="verificar(this)"/> </th> 
+                    <th> <input type="text" id = "v5" onblur="verificar(this)"/> </th> 
+                    <th> <input type="text" id = "v6" onblur="verificar(this)"/> </th> 
+            </tr>
+            <tr>
+                    <th> <input type="text" id = "v7" onblur="verificar(this)"/> </th> 
+                    <th> <input type="text" id = "v8" onblur="verificar(this)"/> </th> 
+                    <th> <input type="text" id = "v9" onblur="verificar(this)"/> </th> 
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
